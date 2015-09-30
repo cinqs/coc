@@ -1,0 +1,28 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+.table{
+	display: table;
+}
+.table-cell{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+nav#main{
+
+}
+
+nav#main li{
+	display: inline-block;
+	padding-left: 15px;
+}
+
+header{
+	margin-top: 50px;
+}
+
+article{
+	margin: 0 auto;
+}
