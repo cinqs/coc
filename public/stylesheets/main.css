@@ -1,5 +1,8 @@
 body{
 	font-family: 'Lato', sans-serif;
+	min-height: 100vh;
+	min-width: 100vw;
+
 }
 .table{
 	display: table;
@@ -16,13 +19,38 @@ nav#main{
 
 nav#main li{
 	display: inline-block;
-	padding-left: 15px;
+	padding:0 15px;
+	color: black;
+	border: 2px black dotted;
+	border-radius: 10px;
+}
+nav#main li>a{
+	color: black;
 }
 
 header{
-	margin-top: 50px;
+	padding-top: 50px;
+	background: url('/images/clash-of-clans.jpg') ;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 100%  auto;
 }
 
 article{
 	margin: 0 auto;
+}
+
+article#news{
+	text-align: left;
+	width: 80%;
+}
+#newsMain{
+	min-height: 100px;
+}
+
+.font-red{
+	color: red;
+}
+.people{
+	min-height: 20vh;
 }

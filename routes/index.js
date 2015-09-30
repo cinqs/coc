@@ -6,7 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/clashOfClan', function(req, res, next){
+router.get('/clashOfClans', function(req, res, next){
 	res.render('clashOfClans');
+});
+
+router.get('/clashOfClans/news', function(req, res, next){
+	res.render('cocnews');
+});
+
+router.get('/clashOfClans/members', function(req, res, next){
+	res.render('cocmembers');
 });
 module.exports = router;
