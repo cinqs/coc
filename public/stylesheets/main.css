@@ -54,3 +54,17 @@ article#news{
 .people{
 	min-height: 20vh;
 }
+
+.mask{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	-ms-transform: rotate(-45deg); /* IE 9 */
+    	-webkit-transform: rotate(-45deg); /* Safari */
+    	transform: rotate(-45deg);
+    	background-color: black;
+}
+.mask img{
+	width: 100%;
+	height: auto;
+}
