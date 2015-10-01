@@ -1,8 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-   ol
-    li
-     a(href='/clashOfClans') Clash Of Clans
+	h1=title
+	p Welcome to #{title}
+
+	ol
+		li
+			a(href='/clashOfClans') Clash of Clans
+
+	div(ng-app='')
+		textarea(ng-model='newnews' type='text' name='newspost')
+		br
+		input(type='submit')
+		p YOUR NEWS:
+		p(ng-bind='newnews')

@@ -17,4 +17,10 @@ router.get('/clashOfClans/news', function(req, res, next){
 router.get('/clashOfClans/members', function(req, res, next){
 	res.render('cocmembers');
 });
+
+router.post('/newspost', function(req, res, next){
+	var newspost = req.body.newspost;
+	console.log(newspost);
+	res.render('newspost', {newspost:newspost})
+})
 module.exports = router;
