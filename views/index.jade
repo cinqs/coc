@@ -8,9 +8,9 @@ block content
 		li
 			a(href='/clashOfClans') Clash of Clans
 
-	div(ng-app='')
+	div(ng-app='homepage' ng-controller='hpctrl')
 		textarea(ng-model='newnews' type='text' name='newspost')
 		br
-		input(type='submit')
+		input(type='submit' id='newspost' ng-click='sendServer(newnews)')
 		p YOUR NEWS:
 		p(ng-bind='newnews')
