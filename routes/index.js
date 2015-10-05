@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'EFREI-CHINOISE' });
+  res.render('index', { title: 'EFREI-CHINOIS' });
 });
 
 router.get('/clashOfClans', function(req, res, next){
