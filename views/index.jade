@@ -8,18 +8,21 @@ block content
 		li
 			a(href='/clashOfClans') Clash of Clans
 
-	div(ng-app='homepage' ng-controller='hpctrl')
-		textarea(ng-model='newnews' type='text' name='newspost')
-		br
-		input(type='submit' id='newspost' ng-click='sendServer(newnews)')
-		p YOUR NEWS:
-		p(ng-bind='newnews')
+	div.row
+		div.col-md-6
+			div(ng-app='homepage' ng-controller='hpctrl')
+				textarea(ng-model='newnews' type='text' name='newspost')
+				br
+				input(type='submit' id='newspost' ng-click='sendServer(newnews)')
+				p YOUR NEWS:
+				p(ng-bind='newnews')
 
-	div
-		a(href='/newspost') All News
-	div
-		ul
-			each val in posts.length ? posts:['no post']
-					li #{val.post}
-						br
-						span #{val.time_added}
+			div
+				a(href='/newspost') All News
+		div.col-md-6
+			h1 All message
+			table.table
+				each val in posts.length ? posts:['no posts']
+					tr
+						td(colspan='2')=val.time_added
+						td=val.post
