@@ -1,28 +1,31 @@
 extends layout
 
 block content
-	h1=title
-	p Welcome to #{title}
+	div.header.container
+		h1=title
+		p Welcome to #{title}
 
-	ol
-		li
-			a(href='/clashOfClans') Clash of Clans
+		ol
+			li
+				a(href='/clashOfClans') Clash of Clans
 
-	div.row
-		div.col-md-6
-			div(ng-app='homepage' ng-controller='hpctrl')
-				textarea(ng-model='newnews' type='text' name='newspost')
-				br
-				input(type='submit' id='newspost' ng-click='sendServer(newnews)')
-				p YOUR NEWS:
-				p(ng-bind='newnews')
+	div.container.body
+		div.row
+			div.col-md-6
+				div(ng-app='homepage' ng-controller='hpctrl')
+					textarea(ng-model='newnews' type='text' name='newspost' rows='5')
+					br
+					input(type='submit' id='newspost' ng-click='sendServer(newnews)')
+					br
+					h3 YOUR NEWS:
+					h4(ng-bind='newnews')
 
-			div
-				a(href='/newspost') All News
-		div.col-md-6
-			h1 All message
-			table.table
-				each val in posts.length ? posts:['no posts']
-					tr
-						td(colspan='2')=val.time_added
-						td=val.post
+				div
+					a(href='/newspost') All News
+			div.col-md-6
+				h1 All message
+				table.table
+					each val in posts.length ? posts:['no posts']
+						tr
+							td(colspan='2')=val.time_added
+							td=val.post

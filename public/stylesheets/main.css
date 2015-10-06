@@ -65,3 +65,12 @@ article#news{
 	width: 100%;
 	height: auto;
 }
+div.header{
+	background-color: lightblue;
+}
+div.body{
+	margin-top: 20px;
+}
+textarea[name='newspost']{
+	width: 100%;
+}
