@@ -24,4 +24,6 @@ html
 			h1=title
 			ul
 				each val in newspost.length ? newspost:['no post']
-					li=val.post
+					li #{val.post}
+						br
+						span #{val.time_added}

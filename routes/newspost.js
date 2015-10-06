@@ -51,6 +51,7 @@ router.post('/', function(req, res, next){
 	  console.log("Connected correctly to server.");
 	  db.collection('postcon').insertOne({
 	  	'post':newspost,
+	  	'time_added':Date(),
 	  });
 	  db.close();
 	});
