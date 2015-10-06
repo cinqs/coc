@@ -54,6 +54,7 @@ router.post('/', function(req, res, next){
 	  });
 	  db.close();
 	});
+	res.send('success');
 })
 
 module.exports = router;
