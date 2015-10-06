@@ -17,9 +17,13 @@ router.get('/', function(req, res, next) {
 		      } ;
 		});*/
 		docs = 'nihao';
-		dbQuery(db, function(doc){
-			docs = docs + doc;
-			console.log(docs);
+		dbQuery(db, function(docs){
+			docs.toArray(function(err, docs) {
+			    assert.equal(err, null);
+			    console.log("Found the following records");
+			    console.dir(docs);
+			    res.status(200).render('newspost', {newspost:docs, title:'New Posts'});
+			  });
 		});
 
 		console.log(docs);
@@ -28,18 +32,13 @@ router.get('/', function(req, res, next) {
 
 
 	//module thought here, you made a module and use it as a callback;
-
-	res.render('newspost', {newspost:'news'});
+	//res.sendStatus(200);
+	
 });
 
 var dbQuery = function(db, callback){
 	var posts = db.collection('postcon').find();
-	posts.each(function(err, doc){
-		assert.equal(err, null);
-		if (doc != null) {
-			callback(doc);
-		};
-	});
+	callback(posts);
 }
 
 router.post('/', function(req, res, next){

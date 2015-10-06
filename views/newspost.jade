@@ -21,4 +21,7 @@ html
 						a(href='/clashOfClans/members') CLAN HEROES
 
 		article
-			h1=newspost
+			h1=title
+			ul
+				each val in newspost.length ? newspost:['no post']
+					li=val.post
