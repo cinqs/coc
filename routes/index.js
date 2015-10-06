@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var getnews = require('getnews');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'EFREI-CHINOIS' });
+	getnews(function(docs){
+		res.render('index', { title: 'EFREI-CHINOIS' , posts:docs});
+	});
+  
 });
 
 router.get('/clashOfClans', function(req, res, next){

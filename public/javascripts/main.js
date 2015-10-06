@@ -6,7 +6,7 @@ app.controller('hpctrl', function($scope, $http) {
     	$http.post('/newspost', {newspost:newnews}).success(function(data){
     		console.log(data);
     		if (data == 'success') {
-    			alert('you have successfully add a post');
+    			location.reload();
     		};
     	});
     };

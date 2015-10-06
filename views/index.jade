@@ -17,3 +17,9 @@ block content
 
 	div
 		a(href='/newspost') All News
+	div
+		ul
+			each val in posts.length ? posts:['no post']
+					li #{val.post}
+						br
+						span #{val.time_added}

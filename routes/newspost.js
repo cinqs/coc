@@ -4,18 +4,12 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/posts';
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 	jsonOut = '';
 	MongoClient.connect(url, function(err, db){
-		/*var posts = db.collection('postcon').find();
-		posts.each(function(err, doc) {
-		      assert.equal(err, null);
-		      if (doc != null) {
-		      	jsonOut += doc;
-		      	test = 'test';
-		      } ;
-		});*/
 		docs = 'nihao';
 		dbQuery(db, function(docs){
 			docs.toArray(function(err, docs) {
