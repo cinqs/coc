@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	.container
+		.col-sm-6.col-sm-offset-3
+			h1
+				span.fa.fa-sign-in
+				span Sign Up
+			if message.length
+				.alert.alert-danger
+					span=message
+			form(action='/signup' method='post')
+				.form-group
+					label Email
+					input(type='text' name='email').form-control
+				.form-group
+					label PWD
+					input(type='password' name='password').form-control
+				button(type='submit').btn.btn-warning.btn-lg Sign Up
+			p
+				a(href='/login') Login
+			p
+				a(href='/') HOME
