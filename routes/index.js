@@ -22,5 +22,9 @@ router.get('/clashOfClans/members', function(req, res, next){
 	res.render('cocmembers');
 });
 
+router.get('/member', function(req, res, next){
+	res.redirect(302, '/members');
+});
+
 
 module.exports = router;
