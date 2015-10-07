@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 			    assert.equal(err, null);
 			    console.log("Found the following records");
 			    console.dir(docs);
-			    res.status(200).render('newspost', {newspost:docs, title:'New Posts'});
+			    res.status(200).render('newspost', {newspost:docs, title:'New Posts', user:req.user});
 			  });
 		});
 

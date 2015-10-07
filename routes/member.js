@@ -4,7 +4,7 @@ var member=require('member');
 
 router.get('/', function(req, res, next){
 	member('read', '', function(data){
-		res.render('members', {members:data});
+		res.render('members', {members:data, user:req.user});
 	})
 });
 
@@ -30,6 +30,6 @@ router.post('/', function(req, res, next){
 		});
 	};
 	
-})
+});
 
 module.exports = router;

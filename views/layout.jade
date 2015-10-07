@@ -14,4 +14,12 @@ html
     script(src='/javascripts/quill.js')
     script(src='/javascripts/main.js')
   body
+    if user
+        strong Email:
+        span=user.local.email
+        br
+        a(href='/logout').btn.btn-warning Log Out
+    else
+        a(href='/login').btn.btn-primary Login 
+        a(href='/signup').btn.btn-prmary Sign Up
     block content

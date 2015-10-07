@@ -17,6 +17,8 @@ var member = require('./routes/member.js');
 var configDB = require('./config/db.js');
 
 var app = express();
+//app.use(express.cookieParser());
+//app.use(express.session({secret:'yoursecret', cookie:{maxAge:6000}}));
 
 mongoose.connect(configDB.url);
 
@@ -34,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({secret:'thisisefreichinoisloginandsignup'}));
+app.use(session({secret:'thisisefreichinoisloginandsignup', cookie:{maxAge:60*60*1000}}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -76,6 +78,16 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
 
 
 module.exports = app;
