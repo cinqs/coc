@@ -13,16 +13,23 @@ router.post('/', function(req, res, next){
 	var gender = req.body.gender;
 	var age = req.body.age;
 	var tel = req.body.tel;
-	var json = [{
-		'name' : name,
-		'gender' : gender,
-		'age' : age,
-		'tel' : tel
-	}];
+	if (name == '' || gender == '' || age == '' || tel == '') {
+		member('read', '', function(data){
+			res.render('members', {members:data, error:'all fields have to be filled'});
+		})
+	}else{
+		var json = [{
+			'name' : name,
+			'gender' : gender,
+			'age' : age,
+			'tel' : tel
+		}];
 
-	member('create', json, function(data){
-		res.render('members', {members:data})
-	})
+		member('create', json, function(data){
+			res.render('members', {members:data});
+		});
+	};
+	
 })
 
 module.exports = router;

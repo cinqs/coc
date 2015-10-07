@@ -11,26 +11,32 @@ html
 		script(src='/javascripts/quill.js')
 		script(src='/javascripts/main.js')
 	body
-		.header
-			div.form-wrap
-				h2 Add new
-				form(action='' method='post' role='form').form
-					span Name
-					input(name='name' type='text').form-control
-					br
-					span Gender
-					select(name='gender').form-control
-						option(value='secret') Secret
-						option(value='male') Male
-						option(value='female') Female
-					br
-					span Age
-					input(type='number' name='age').form-control
-					br
-					span Tel
-					input(type='tel' name='tel').form-control
-					br
-					input(type='submit').btn.btn-default
+		.header.container-fluid
+			div.form-wrap.row
+				.col-md-9
+					h2 Member Board SHOW
+				.col-md-3
+					h2 Add new
+					if error
+						.alert.alert-danger
+							span=error
+					form(action='' method='post' role='form').form
+						span Name
+						input(name='name' type='text').form-control
+						br
+						span Gender
+						select(name='gender').form-control
+							option(value='secret') Secret
+							option(value='male') Male
+							option(value='female') Female
+						br
+						span Age
+						input(type='number' name='age').form-control
+						br
+						span Tel
+						input(type='tel' name='tel').form-control
+						br
+						input(type='submit').btn.btn-default
 		.container
 			.row
 				each val in members.length ? members:['no member']
