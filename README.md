@@ -11,4 +11,4 @@ I didn't have a excellent overview or bird eye view for whole web architecture o
 <br>
 BUT I'M TRYING AND I GOT SOMETHING!
 <br>
-webiste<a href='efreichinois.cisong.eu'>This is the website</a>
+webiste<a href='http://efreichinois.cisong.eu'>This is the website</a>
