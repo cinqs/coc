@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	if message.length
+		.alert.alert-danger
+			span=message
+	form(action='/login' method='post').form
+		label Uname
+		input(type='text' name='email').form-control
+		label PWD
+		input(type='password' name='password').form-control
+		button(type='submit').btn.btn-warning.btn-lg Login

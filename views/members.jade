@@ -40,6 +40,6 @@ block content
 				each val in members.length ? members:['no member']
 					.col-md-3
 						h2=val.name
-						h3=val.gender
+						h3.text-capitalize=val.gender
 						h3=val.age
 						h3=val.tel
